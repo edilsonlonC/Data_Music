@@ -1,0 +1,24 @@
+{% extends 'Base/base.html' %}
+{% block div %}
+<table class="table" >
+  <thead>
+ <tr>
+   <th scope="col">Price</th>
+   <th scope="col">Date</th>
+     <th scope="col">info sale </th>
+</tr>
+    {% if sales %}
+    {% for i in sales %}
+    <tr>
+      <th scope="col">{{i.Price_sale}}</th>
+        <th scope="col">{{i.time}}</th>
+        <th>{{i.id_sale_Instrument.all|join:","}}</th>
+</tr>
+    {% endfor %}
+
+    {% else %}
+    <h1> no hay elementos </h1>
+    <h3> remember you must insert date in format 'yyyy-MM-DD'</h3>
+    {% endif %}
+  </thead>
+{% endblock %}

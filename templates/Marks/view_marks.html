@@ -1,0 +1,22 @@
+{% extends 'Base/base.html' %}
+{% block div %}
+<table class="table" >
+   <a class = "btn-primary btn-lg" href="{% url 'create_mark' %}">Create mark</a>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Country</th>
+   </tr>
+ </thead>
+ {% for Marks in object_list %}
+ <thead>
+   <tr>
+     <th scope="col">{{Marks.Name}}</th>
+     <th scope="col">{{Marks.Country}}</th>
+     <th scope="col"> <a class = "btn-primary btn-lg" href="{% url 'edit_mark' Marks.Serial%}">Edit</a></th>
+     <th scope="col"> <a class = "btn-danger btn-lg" href="{% url 'remove_mark' Marks.Serial %}">Remove</a></th>
+  {% endfor%}
+  </tr>
+</thead>
+</table>
+{% endblock %}

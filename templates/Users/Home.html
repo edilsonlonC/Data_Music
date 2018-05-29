@@ -1,0 +1,58 @@
+{% extends 'Base/base.html' %}
+{% block div %}
+<div class="slider">
+			<ul>
+				<li>
+  <img src=" https://static.musiciansfriend.com/static/mf/brands/fender/MF-MD-BP-Fender-Hero4-Desk-01-24-18.jpg" alt="">
+ </li>
+				<li>
+  <img src="http://images6.fanpop.com/image/photos/37800000/Fender-telecaster-fender-guitars-37881941-1600-1058.jpg" alt="">
+</li>
+				<li>
+  <img src="https://cdn.mos.cms.futurecdn.net/0f5866245113256953456d37c7b547dd-1200-80.jpg" alt="">
+</li>
+				<li>
+  <img src="https://www.muziker.cz/image/2/0094/YFxb.stanmore_br_04_jpg.jpg" alt="">
+</li>
+			</ul>
+		</div>
+
+<center>
+      <table>
+    <tr>
+    <th scope="col" > <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'instrument' %}">
+      <img src="https://raw.githubusercontent.com/edilsonlonC/project_DB/master/Front-end/Instruments.png">
+      </a>
+		</th>
+<th scope="col" >
+<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'view_marks' %}">
+  <img src="https://raw.githubusercontent.com/edilsonlonC/project_DB/master/Front-end/TradeMarks.png">
+
+  </a>
+</th>
+<th scope="col" >
+<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'sale' %}">
+  <img src="https://raw.githubusercontent.com/edilsonlonC/project_DB/master/Front-end/Sales.png">
+
+  </a>
+</th>
+<th scope="col" >
+<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'register' %}">
+  <img src="https://raw.githubusercontent.com/edilsonlonC/project_DB/master/Front-end/Register.png">
+   </a>
+</th>
+</tr>
+<tr>
+<th scope="col" >
+<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'view_users' %}">
+  <img src="https://raw.githubusercontent.com/edilsonlonC/project_DB/master/Front-end/ViewUsers.png">
+
+  </a>
+</th>
+</tr>
+</table>
+</center>
+
+
+
+{% endblock %}

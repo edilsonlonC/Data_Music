@@ -1,0 +1,9 @@
+{% extends 'Base/base.html'%}
+
+{% block div %}
+<form  method="post">
+  {% csrf_token %}
+  <p> confrim Delete "{{object.Name}}" "{{object.LastName}}"</p>
+  <input class="btn-danger btn-lg" type="submit"  value=" confirn delete">
+</form>
+{% endblock %}

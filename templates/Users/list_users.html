@@ -1,0 +1,23 @@
+{% extends 'Base/base.html' %}
+{% block div %}
+<table class="table" >
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Status</th>
+   </tr>
+   {% for U in object_list %}
+   <tr>
+     <th scope="col">{{U.first_name}}</th>
+     <th scope="col">{{U.email}}</th>
+     <th scope="col">{{U.is_superuser}}</th>
+     <th scope="col"> <a class='btn-success btn-lg' href="{% url 'update_user' U.id %}">Edit</a>
+    </th>
+    <th scope="col"> <a class='btn-danger btn-lg' href="{% url 'remove_user' U.id %}">remove</a>
+   </th>
+  </tr>
+  {% endfor %}
+ </thead>
+</table>
+{% endblock %}

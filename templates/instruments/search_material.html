@@ -1,0 +1,10 @@
+{% extends 'Base/base.html' %}
+{% block div %}
+<form class="" action="#" method="post">
+  {% csrf_token %}
+  {% for m in material %}
+  <h1>{{ m.Material }}</h1>
+  {% endfor%}
+</form>
+
+{% endblock%}

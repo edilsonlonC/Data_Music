@@ -1,0 +1,9 @@
+{% extends 'Base/base.html'%}
+{% block div %}
+<form class="form-control"  method="post">
+  {% csrf_token %}
+  <p>confirm Delete "{{ object_list.username}}"</p>
+  <input type="submit"  value="yes,delete" class='btn-danger btn-lg'>
+
+</form>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'Base/base.html' %}
+{% block div %}
+<table class="table" >
+  <thead>
+ <h1>{{ number_sales }}</h1>
+ <tr>
+
+     <th scope="col">info sale </th>
+     <th scope="col">instruments </th>
+</tr>
+    {% if sales %}
+    {% for i in sales %}
+    <tr>
+        <th scope="col">{{i.time}}</th>
+        <th>{{i.id_sale_Instrument.all|join:","}}</th>
+        <th scope = "col "> <a class = "btn-danger btn-lg" href="{% url 'info_sell' i.id %}"> check</a>
+
+
+   </tr>
+    {% endfor %}
+
+    {% else %}
+    <h1> no hay elementos </h1>
+    <h3> remember you must insert date in format 'yyyy-MM-DD'</h3>
+    {% endif %}
+  </thead>
+
+
+<form class="form-control" action="{% url  'searchSales' %}" method="post">
+  {% csrf_token %}
+  <input class="form-control" type="text" name="Sales" >
+  <input  type="submit"class='btn-primary' value="Search" >
+
+</form>
+{% endblock %}

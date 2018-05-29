@@ -1,0 +1,10 @@
+{% extends 'Base/base.html' %}
+{% block div %}
+<form class="form-control"  method="post">
+  {% csrf_token %}
+{{ form.as_p }}
+
+  <button class="btn-primary btn-lg" type="submit" name="button">  Save element </button>
+  <a class='btn-dng' href="{% url 'instrument'  %}">
+</form>
+{% endblock%}

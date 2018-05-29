@@ -1,0 +1,30 @@
+{% extends 'Base/base.html' %}
+{% block div %}
+<table class="table" >
+
+    <a class="btn-success btn-lg" href="{% url 'order' %}"> order desc </a>
+
+   <a class="btn-success btn-lg" href="{% url 'order_asc' %}"> order asc </a>
+
+
+  <thead>
+    <tr>
+      <th scope="col">Model</th>
+      <th scope="col"> sales</th>
+      <th scope="col">Production</th>
+      </th>
+   </tr>
+
+  {% for E in elements %}
+
+   <tr>
+     <th scope="col">{{E.Model}}</th>
+     <th scope="col">{{E.Quantity}}</th>
+     <th scope="col">{{E.Production}}</th>
+
+  </tr>
+
+  {% endfor %}
+ </thead>
+</table>
+{% endblock %}

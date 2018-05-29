@@ -1,0 +1,41 @@
+{% extends 'Base/base.html' %}
+
+  {% block div %}
+
+<table class="table" >
+  <thead>
+    <tr>
+      <th scope="col">Model</th>
+      <th scope="col">Price</th>
+      <th scope="col">Material</th>
+      <th scope="col">Type</th>
+   </tr>
+    {% if instruments %}
+    {% for i in instruments %}
+    <tr>
+      <th scope="col">{{i.Model}}</th>
+      <th scope="col">{{i.Price}}</th>
+      <th scope="col">{{i.Id_Material}}</th>
+      <th scope="col">{{i.Id_Category}}</th>
+      <th scope = "col "> <a href="{% url 'edit' i.ID  %}" class='btn-primary btn-lg'> Edit</a> </th>
+      <th scope = "col "> <a href="{% url 'remove' i.ID  %}" class='btn-danger btn-lg'>Remove</a> </th>
+      <form   method="post">
+      </form>
+   </tr>
+    {% endfor %}
+    {% else %}
+    <h1> no hay elementos </h1>
+    {% endif %}
+    <a class="btn-primary btn-lg" href="{% url 'new'%}"> Add instruments </a>
+    <a   name="max" class=' btn-success btn-lg'  href="{% url 'max_sold' %}" > info instruments</a>
+  </thead>
+<div>
+  <form class="form-control" method="post" action=" {% url 'search' %}">
+    {% csrf_token %}
+    <input name='Buscar' type="text" name="Search" >
+    <input name=" buscar" type="submit" name="Search" class='btn-primary' value="Search" href="{% url 'search' %}" >
+
+<div>
+  </form>
+
+  {% endblock %}

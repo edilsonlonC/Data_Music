@@ -1,0 +1,25 @@
+{% extends 'Base/base.html' %}
+{% block div %}
+
+<table class="table" >
+  <a class="btn-success btn-lg" href="{% url 'create_clients' %}"> new Client</a>
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Name</th>
+      <th scope="col">Last name</th>
+   </tr>
+   {% for client in object_list %}
+   <tr>
+     <th scope="col">{{client.Id}}</th>
+     <th scope="col">{{client.Name}}</th>
+     <th scope="col">{{client.LastName}}</th>
+     <th scope="col"> <a class="btn-primary btn-lg" href="{% url 'edit_client' client.Id %}">Edit</a>
+     </th>
+     <th scope="col"> <a class="btn-danger btn-lg" href="{% url 'remove_client' client.Id %}">Remove</a>
+     </th>
+  </tr>
+  {% endfor %}
+ </thead>
+</table>
+{% endblock%}
